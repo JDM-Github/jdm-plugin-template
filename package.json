@@ -1,0 +1,104 @@
+{
+    "name": "jdm-plugin-template",
+    "type": "module",
+    "version": "1.0.0",
+    "description": "A starter template for building jdm-cli plugins",
+    "main": "./lib/index.js",
+    "scripts": {
+        "test": "echo \"No tests yet\""
+    },
+    "dependencies": {
+        "chalk": "^5.3.0",
+        "ora": "^9.4.0",
+        "string-width": "^8.2.0",
+        "strip-ansi": "^7.2.0"
+    },
+    "keywords": [
+        "jdm",
+        "plugin",
+        "template"
+    ],
+    "author": "JDM-Github",
+    "license": "MIT",
+    "jdmPlugin": {
+        "namespace": "plugin-template",
+        "description": "Your plugin description goes here",
+        "commands": [
+            {
+                "name": "create",
+                "description": "Scaffold a new project",
+                "fields": [
+                    {
+                        "key": "name",
+                        "label": "Project Name",
+                        "flag": "--name",
+                        "type": "text",
+                        "placeholder": "my-project",
+                        "required": true
+                    },
+                    {
+                        "key": "install",
+                        "label": "Install Dependencies",
+                        "flag": "--install",
+                        "type": "boolean",
+                        "default": false
+                    }
+                ]
+            },
+            {
+                "name": "dev",
+                "description": "Start development environment",
+                "fields": []
+            },
+            {
+                "name": "build",
+                "description": "Compile / package the project",
+                "fields": [
+                    {
+                        "key": "frontend",
+                        "label": "Build Frontend",
+                        "flag": "--frontend",
+                        "type": "boolean",
+                        "default": false,
+                        "description": "Build only the frontend"
+                    },
+                    {
+                        "key": "backend",
+                        "label": "Build Backend",
+                        "flag": "--backend",
+                        "type": "boolean",
+                        "default": false,
+                        "description": "Build only the backend"
+                    },
+                    {
+                        "key": "full",
+                        "label": "Full Build",
+                        "flag": "--full",
+                        "type": "boolean",
+                        "default": false,
+                        "description": "Build everything (frontend + backend)"
+                    }
+                ]
+            },
+            {
+                "name": "clean",
+                "description": "Remove build artifacts",
+                "fields": [
+                    {
+                        "key": "dry",
+                        "label": "Dry Run",
+                        "flag": "--dry",
+                        "type": "boolean",
+                        "default": false,
+                        "description": "Preview what would be deleted without deleting"
+                    }
+                ]
+            },
+            {
+                "name": "install",
+                "description": "Install dependencies",
+                "fields": []
+            }
+        ]
+    }
+}
